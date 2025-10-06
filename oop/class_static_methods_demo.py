@@ -88,3 +88,24 @@ Repo:
 GitHub repository: alx_be_python
 Directory: oop
 File: class_static_methods_demo.py
+
+# class_static_methods_demo.py (before fix)
+
+...
+class Calculator:
+...
+    # (some code here)
+
+Distinguishing Between Class Methods and Static Methods # <--- ERROR LINE
+# (some more code here)
+
+
+# class_static_methods_demo.py (after fix)
+
+...
+class Calculator:
+...
+    # (some code here)
+
+# Distinguishing Between Class Methods and Static Methods # <--- FIXED
+# (some more code here)
