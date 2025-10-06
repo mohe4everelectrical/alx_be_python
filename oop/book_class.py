@@ -285,3 +285,57 @@ def __hash__(self):
     return hash((self.title, self.author, self.year))
 
 
+#!/usr/bin/env python3
+"""
+Book Class Implementation with Magic Methods
+
+This module defines a Book class that demonstrates the use of Python magic methods
+including __init__, __del__, __str__, and __repr__.
+"""
+
+class Book:
+    """
+    A class to represent a book with title, author, and publication year.
+    
+    Attributes:
+        title (str): The title of the book
+        author (str): The author of the book
+        year (int): The publication year of the book
+    """
+    
+    def __init__(self, title: str, author: str, year: int):
+        """
+        Initialize a Book instance with title, author, and publication year.
+        
+        Args:
+            title (str): The title of the book
+            author (str): The author of the book
+            year (int): The publication year of the book
+        """
+        self.title = title
+        self.author = author
+        self.year = year
+    
+    def __del__(self):
+        """
+        Destructor method that prints a message when the object is deleted.
+        """
+        print(f"Deleting {self.title}")
+    
+    def __str__(self):
+        """
+        Return a user-friendly string representation of the Book.
+        
+        Returns:
+            str: String in format "Title by Author, published in Year"
+        """
+        return f"{self.title} by {self.author}, published in {self.year}"
+    
+    def __repr__(self):
+        """
+        Return a developer-friendly string representation of the Book.
+        
+        Returns:
+            str: String in format "Book('Title', 'Author', Year)"
+        """
+        return f"Book('{self.title}', '{self.author}', {self.year})"
