@@ -226,3 +226,62 @@ if __name__ == "__main__":
     main()
     test_edge_cases()
     print("\n=== All tests completed ===")
+
+=== Testing Book Class Magic Methods ===
+
+1. Creating a Book instance:
+Book '1984' created successfully!
+
+2. Testing __str__ method:
+1984 by George Orwell, published in 1949
+
+3. Testing __repr__ method:
+Book('1984', 'George Orwell', 1949)
+
+4. Testing utility methods:
+Book age: 75 years
+Is classic: True
+
+5. Creating another book:
+Book 'The Hunger Games' created successfully!
+Book age: 16 years
+Is classic: False
+
+6. Demonstrating object recreation from __repr__:
+Repr string: Book('1984', 'George Orwell', 1949)
+(Object can be recreated using the repr string)
+
+7. Triggering destructors:
+Deleting 1984
+Deleting The Hunger Games
+
+=== Testing Edge Cases ===
+
+Error caught: Title must be a string
+Error caught: Author must be a string
+Error caught: Year must be an integer
+
+=== All tests completed ===
+
+
+# You can extend the Book class with more magic methods:
+
+def __eq__(self, other):
+    """Check if two books are equal."""
+    if not isinstance(other, Book):
+        return False
+    return (self.title == other.title and 
+            self.author == other.author and 
+            self.year == other.year)
+
+def __lt__(self, other):
+    """Compare books by publication year."""
+    if not isinstance(other, Book):
+        return NotImplemented
+    return self.year < other.year
+
+def __hash__(self):
+    """Make Book objects hashable."""
+    return hash((self.title, self.author, self.year))
+
+
